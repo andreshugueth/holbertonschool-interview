@@ -9,6 +9,9 @@ and each box may contain keys to the other boxes.
 def canUnlockAll(boxes):
     """Unlocks boxes"""
 
+    if boxes is not list:
+        return False
+
     unlock = [0]
     for key in unlock:
         for element in boxes[key]:
