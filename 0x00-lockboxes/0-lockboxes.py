@@ -9,7 +9,7 @@ and each box may contain keys to the other boxes.
 def canUnlockAll(boxes):
     """Unlocks boxes"""
 
-    if boxes is not list:
+    if type(boxes) is not list:
         return False
 
     unlock = [0]
