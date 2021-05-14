@@ -3,8 +3,6 @@
 Minimum Operations
 """
 
-import math
-
 
 def minOperations(n):
     '''
