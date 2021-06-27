@@ -11,13 +11,13 @@ def validUTF8(data):
     """
     nbytes = 0
 
-    b1 = 1 << 7
-    b2 = 1 << 6
+    byte1 = 1 << 7
+    byte2 = 1 << 6
 
-    for i in data:
+    for number in data:
         b = 1 << 7
         if nbytes == 0:
-            while b & i:
+            while b & number:
                 nbytes += 1
                 b = b >> 1
             if nbytes == 0:
@@ -25,7 +25,7 @@ def validUTF8(data):
             if nbytes == 1 or nbytes > 4:
                 return False
         else:
-            if not (i & b1 and not (i & b2)):
+            if not (number & byte1 and not (number & byte2)):
                 return False
         nbytes -= 1
     return nbytes == 0
